@@ -24,7 +24,7 @@ public class extract_sum_compare extends RecursiveTask<Integer> {
                 } catch (Exception e) {  //非数字不能转换，抛出异常，跳出循环，结束本线程的计算
                     break;
                 }
-                sum = Integer.parseInt(list[i]);  //数字计入结果中
+                sum = Integer.parseInt(list[i]);  //数字计入结果中，下一步就直接返回结果了
             }
         } else {
             int middle = (start + end) / 2;  //二分任务，直到每个小任务list长度仅为1

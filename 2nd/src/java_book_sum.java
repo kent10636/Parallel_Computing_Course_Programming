@@ -22,7 +22,7 @@ public class java_book_sum extends RecursiveTask<Integer> {
         int count = 0;
         boolean can_compute = (end - start) < threshold;  //end-start等于0时才为true
         if (can_compute) {
-            if (list[start].matches("book")) {  //matches()函数匹配book
+            if (list[start].matches("book")) {  //matches()函数匹配book，从头到尾完全匹配才为true
                 count++;
             }
         } else {
