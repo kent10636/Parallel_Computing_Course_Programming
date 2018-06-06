@@ -16,13 +16,17 @@ def partition(list, low, high):
     return i + 1  # 返回分界点
 
 
-list = [3, 7, 12, 5, 3, 10, 11, 9, 4, 2, 4]
+if __name__ == '__main__':
+    list = [3, 7, 12, 5, 3, 10, 11, 9, 4, 2, 4]
 
-print(list)
-quicksort(list, 0, len(list) - 1)  # low=0,high=10
-print(list)  # list = [2, 3, 3, 4, 4, 5, 7, 9, 10, 11, 12]
+    print(list)
+    quicksort(list, 0, len(list) - 1)  # low=0,high=10
+    print(list)  # list = [2, 3, 3, 4, 4, 5, 7, 9, 10, 11, 12]
 
-filename = 'quicksort_output.txt'
-with open(filename, 'w')as f:
-    f.write(str(list))
-    f.close()
+    filename = 'quicksort_output.txt'
+    try:
+        with open(filename, 'w')as f:
+            f.write(str(list))
+            f.close()
+    except IOError:
+        print('File open fail!')
