@@ -6,7 +6,7 @@ import time
 
 class Bank:
     def __init__(self):
-        self.money = 10000  # 初始10000元
+        self.money = 5000  # 初始5000元
         self.lock = threading.Lock()  # 创建锁
 
     def counter_withdraw(self, money1):
