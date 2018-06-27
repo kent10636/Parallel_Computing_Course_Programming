@@ -15,8 +15,9 @@ class BoxOffice(threading.Thread):
 
         while ticket > 0:
             lock.acquire()  # 加锁
-            print(self.getName() + ' sells ticket ' + str(ticket))
-            ticket = ticket - 1  # 票数减1
+            if ticket > 0:  # 排除进入while后ticket被其他线程更改为小于1的情况
+                print(self.getName() + ' sells ticket ' + str(ticket))
+                ticket = ticket - 1  # 票数减1
             lock.release()  # 解锁
             time.sleep(0.1)  # 每次售票完毕后休眠100ms
 
